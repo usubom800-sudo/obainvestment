@@ -1,0 +1,6 @@
+{
+  "name": "OBA Investment Bishkek",
+  "description": "Premium real estate and property investment company based in Bishkek, Kyrgyz Republic. High-end residential complexes, premium business centers, and luxury penthouses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #D4C7B0;
+  --color-brand-dark: #9F927D;
+  --color-brand-light: #F2EBE1;
+  --color-brand-gold: #C0B097;
+  --color-bg-dark: #0D0D0D;
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+/* Custom animations and utilities */
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(-5%);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s infinite;
+}
+
+/* Custom scroller for matching units */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #D4C7B0;
+}
+
+/* Premium PDF Print styles */
+@media print {
+  /* Hide the entire standard reactive container */
+  #app-root-container > *:not(#print-brochure-container) {
+    display: none !important;
+  }
+  
+  /* Show print container perfectly */
+  #print-brochure-container {
+    display: block !important;
+    width: 100% !important;
+    background-color: #0D0D0D !important;
+    color: #ffffff !important;
+  }
+
+  body, html {
+    background: #0D0D0D !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Force page breaks on each logical slide */
+  .pdf-page {
+    page-break-after: always !important;
+    page-break-inside: avoid !important;
+    height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+    padding: 3rem !important;
+    background-color: #0D0D0D !important;
+  }
+}
+
+
+
